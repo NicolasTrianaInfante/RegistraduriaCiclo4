@@ -7,12 +7,13 @@ from Controladores.CandidatoControlador import CandidatoControlador
 from Controladores.MesaControlador import MesaControlador
 from Controladores.ResultadoControlador import ResultadoControlador
 
-
 app = Flask(__name__)
 cors = CORS(app)
-####################################
-##    PROBAR EL SERVICIO          ##
-####################################
+
+
+##############################
+##     VARIABLES GLOBALES   ##
+##############################
 miControladorPartido = PartidoControlador()
 miControladorCandidato = CandidatoControlador()
 miControladorMesa = MesaControlador()
@@ -27,10 +28,9 @@ def test():
     json["message"] = "Server running ..."
     return jsonify(json)
 
-######################################
-## ENDPOINT PARTIDOS                ##
-######################################
-
+#####################################
+##      ENDPOINT PARTIDOS          ##
+#####################################
 @app.route("/partidos", methods=["GET"])
 def getPartidos():
     json = miControladorPartido.index()
@@ -58,10 +58,9 @@ def eliminarPartido(id):
     json = miControladorPartido.delete(id)
     return jsonify(json)
 
-######################################
-##        ENDPOINT CANDIDATOS       ##
-######################################
-
+#####################################
+##      ENDPOINT CANDIDATOS        ##
+#####################################
 @app.route("/candidatos", methods = ["GET"])
 def getCandidatos():
     json = miControladorCandidato.index()
@@ -94,9 +93,9 @@ def asignarPartidoCandidato(id_candidato, id_partido):
     json = miControladorCandidato.asignarCandidato(id_candidato, id_partido)
     return jsonify(json)
 
-######################################
-##        ENDPOINT MESAS            ##
-######################################
+#####################################
+##           ENDPOINT MESAS        ##
+#####################################
 
 @app.route("/mesas", methods=["GET"])
 def getMesas():
@@ -179,6 +178,9 @@ def inscritoEnMesas(id_candidato):
 def getMaxDocument():
     json = miControladorResultado.getMayorCedula()
     return jsonify(json)
+
+
+
 
 if __name__ == "__main__":
     app.run(debug=False, port=9000)
