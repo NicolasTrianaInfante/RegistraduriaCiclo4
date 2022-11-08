@@ -1,0 +1,12 @@
+Credenciales MONGODB
+user:ciclo4_backend_votaciones
+user:ciclo4_backend_votaciones_security 
+contraseña: WKv8BfNyXK-Vb_P
+
+Comandos Maven: 
+
+mvn compile
+
+mvn package
+
+java -jar target/MainSecurity-0.0.1-SNAPSHOT.jar
