@@ -10,3 +10,28 @@ mvn compile
 mvn package
 
 java -jar target/MainSecurity-0.0.1-SNAPSHOT.jar
+
+
+COMANDOS PYTHON
+python -m virtualenv venv
+venv\Scripts\activate  
+
+
+Importaciones APIGATEWAY
+python3 -m pip install waitress
+python -m pip install flask_cors
+python3 -m pip install requests
+
+/////NOTAS/////
+
+
+{
+    "seudonimo": "root",
+    "correo": "root@root.org",
+    "contrasena": "MISIONTIC2022"
+}
+
+Actializar para validar el 
+Pendientes añadir las rutas 10:30
+archivo main API
+
