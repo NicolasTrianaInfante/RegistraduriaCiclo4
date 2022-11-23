@@ -35,14 +35,6 @@ export class LoginComponent implements OnInit {
      data => {
        this.router.navigate(['pages/dashboard']);
        this.miServicioSeguridad.guardarDatosSesion(data);
-     },
-     error => {
-       Swal.fire({
-         title: 'Error Login',
-         text: error["error"]["message"],
-         icon: 'error',
-         timer: 5000
-       });
      }
    );
  }

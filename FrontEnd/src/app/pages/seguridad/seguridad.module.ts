@@ -16,7 +16,6 @@ import { FormsModule } from '@angular/forms';
     SeguridadRoutingModule,
     NbCardModule,
     FormsModule
-
   ]
 })
 export class SeguridadModule { }
