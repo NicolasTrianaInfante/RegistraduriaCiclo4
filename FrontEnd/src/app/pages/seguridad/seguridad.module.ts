@@ -9,13 +9,13 @@ import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    LoginComponent
+    LoginComponent,
   ],
   imports: [
     CommonModule,
     SeguridadRoutingModule,
     NbCardModule,
-    FormsModule
-  ]
+    FormsModule,
+  ],
 })
 export class SeguridadModule { }

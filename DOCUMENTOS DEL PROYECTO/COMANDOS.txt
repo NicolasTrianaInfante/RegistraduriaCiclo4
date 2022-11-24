@@ -35,3 +35,13 @@ Actializar para validar el
 Pendientes añadir las rutas 10:30
 archivo main API
 
+########################################
+########################################
+### ACTUALIZAR REPOSITORIO CON HUSKY ###
+### EN FRONT END #######################
+########################################
+########################################
+
+git push --no-verify
+
+

@@ -6,12 +6,12 @@ import { environment } from '../../environments/environment';
 import { Usuario } from '../modelos/usuario.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class SeguridadService {
   elUsuario = new BehaviorSubject<Usuario>(new Usuario);
 
-  constructor(private http: HttpClient,private router: Router) {
+  constructor(private http: HttpClient, private router: Router) {
     this.verificarSesionActual();
    }
    /**
@@ -56,11 +56,11 @@ public get usuarioSesionActiva(): Usuario {
   * fue almacenada correctamente
   */
   guardarDatosSesion(datosSesion: any) {
-  
-  let sesionActual = localStorage.getItem('sesion');
-  let data: Usuario = {
+
+  const sesionActual = localStorage.getItem('sesion');
+  const data: Usuario = {
   _id: datosSesion.user_id,
-  token:datosSesion.token,
+  token: datosSesion.token,
   };
   localStorage.setItem('sesion', JSON.stringify(data));
   this.setUsuario(data);
@@ -78,7 +78,7 @@ public get usuarioSesionActiva(): Usuario {
   * existe información de un usuario previamente logueado
   */
   verificarSesionActual() {
-  let sesionActual = this.getDatosSesion();
+  const sesionActual = this.getDatosSesion();
   if (sesionActual) {
   this.setUsuario(JSON.parse(sesionActual));
   }
@@ -88,7 +88,7 @@ public get usuarioSesionActiva(): Usuario {
   * @returns
   */
   sesionExiste(): boolean {
-  let sesionActual = this.getDatosSesion();
+  const sesionActual = this.getDatosSesion();
   return (sesionActual) ? true : false;
   }
   /**
@@ -97,7 +97,7 @@ public get usuarioSesionActiva(): Usuario {
   * @returns
   */
   getDatosSesion() {
-  let sesionActual = localStorage.getItem('sesion');
+  const sesionActual = localStorage.getItem('sesion');
   return sesionActual;
   }
 }
